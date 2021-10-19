@@ -327,20 +327,6 @@ public class WinRmTool {
         this.failureRetryPolicy = failureRetryPolicy;
     }
 
-    /**
-     * Executes a Native Windows command.
-     * It is creating a new Shell on the destination host each time it is being called.
-     * @param command The command is limited to 8096 bytes.
-     *                Maximum length of the command can be even smaller depending on the platform.
-     *                https://support.microsoft.com/en-us/kb/830473
-     * @since 0.2
-     */
-    public WinRmToolResponse executeCommand(String command) {
-        StringWriter out = new StringWriter();
-        StringWriter err = new StringWriter();
-        return executeCommand(command, out, err);
-    }
-
     public WinRmClient buildClient(Writer out, Writer err) {
         WinRmClient.checkNotNull(out, "Out Writer");
         WinRmClient.checkNotNull(err, "Err Writer");
@@ -392,6 +378,20 @@ public class WinRmTool {
         builder.payloadEncryptionMode(payloadEncryptionMode);
 
         return builder.build();
+    }
+
+    /**
+     * Executes a Native Windows command.
+     * It is creating a new Shell on the destination host each time it is being called.
+     * @param command The command is limited to 8096 bytes.
+     *                Maximum length of the command can be even smaller depending on the platform.
+     *                https://support.microsoft.com/en-us/kb/830473
+     * @since 0.2
+     */
+    public WinRmToolResponse executeCommand(String command) {
+        StringWriter out = new StringWriter();
+        StringWriter err = new StringWriter();
+        return executeCommand(command, out, err);
     }
 
     public WinRmToolResponse executeCommand(String command, Writer out, Writer err) {
