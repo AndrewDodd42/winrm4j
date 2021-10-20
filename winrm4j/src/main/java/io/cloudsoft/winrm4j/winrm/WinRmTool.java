@@ -39,6 +39,16 @@ public class WinRmTool {
     public static final int DEFAULT_WINRM_PORT = 5985;
     public static final int DEFAULT_WINRM_HTTPS_PORT = 5986;
 
+    /**
+     * @see WinRmClientBuilder#DEFAULT_CODEPAGE
+     */
+    public static final int DEFAULT_CODEPAGE = WinRmClientBuilder.DEFAULT_CODEPAGE;
+
+    /**
+     * @see WinRmClientBuilder#UTF8_CODEPAGE
+     */
+    public static final int UTF8_CODEPAGE = WinRmClientBuilder.UTF8_CODEPAGE;
+
     // TODO consider make them non-final and accessing the properties directly from builder.
     // This impose moving getEndpointUrl() to the WinRmTool.
     private final String address;
@@ -61,6 +71,7 @@ public class WinRmTool {
     private final WinRmClientContext context;
     private final boolean requestNewKerberosTicket;
     private PayloadEncryptionMode payloadEncryptionMode;
+    private int codePage = DEFAULT_CODEPAGE;
 
     public static class Builder {
         private String authenticationScheme = AuthSchemes.NTLM;
@@ -79,6 +90,7 @@ public class WinRmTool {
         private WinRmClientContext context;
         private boolean requestNewKerberosTicket;
         private PayloadEncryptionMode payloadEncryptionMode;
+        private int codePage = DEFAULT_CODEPAGE;
 
         private static final Pattern matchPort = Pattern.compile(".*:(\\d+)$");
 
@@ -163,12 +175,17 @@ public class WinRmTool {
             return this;
         }
 
+        public Builder codePage(int codePage) {
+            this.codePage = codePage;
+            return this;
+        }
+
         public WinRmTool build() {
             return new WinRmTool(getEndpointUrl(address, useHttps, port),
                     domain, username, password, authenticationScheme,
                     disableCertificateChecks, workingDirectory,
                     environment, hostnameVerifier, sslSocketFactory, sslContext,
-                    context, requestNewKerberosTicket, payloadEncryptionMode);
+                    context, requestNewKerberosTicket, payloadEncryptionMode, codePage);
         }
 
         // TODO remove arguments when method WinRmTool.connect() is removed
@@ -236,7 +253,8 @@ public class WinRmTool {
                       boolean disableCertificateChecks, String workingDirectory,
                       Map<String, String> environment, HostnameVerifier hostnameVerifier,
                       SSLSocketFactory sslSocketFactory, SSLContext sslContext, WinRmClientContext context,
-                      boolean requestNewKerberosTicket, PayloadEncryptionMode payloadEncryptionMode) {
+                      boolean requestNewKerberosTicket, PayloadEncryptionMode payloadEncryptionMode,
+                      int codePage) {
         this.disableCertificateChecks = disableCertificateChecks;
         this.address = address;
         this.domain = domain;
@@ -251,6 +269,7 @@ public class WinRmTool {
         this.context = context;
         this.requestNewKerberosTicket = requestNewKerberosTicket;
         this.payloadEncryptionMode = payloadEncryptionMode;
+        this.codePage = codePage;
     }
 
     /**
@@ -376,6 +395,7 @@ public class WinRmTool {
             builder.requestNewKerberosTicket(requestNewKerberosTicket);
         }
         builder.payloadEncryptionMode(payloadEncryptionMode);
+        builder.codePage(codePage);
 
         return builder.build();
     }
