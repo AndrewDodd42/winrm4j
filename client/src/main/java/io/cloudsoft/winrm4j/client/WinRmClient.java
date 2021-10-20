@@ -81,7 +81,6 @@ import io.cloudsoft.winrm4j.client.transfer.ResourceCreated;
 import io.cloudsoft.winrm4j.client.wsman.Locale;
 import io.cloudsoft.winrm4j.client.wsman.OptionSetType;
 import io.cloudsoft.winrm4j.client.wsman.OptionType;
-import sun.awt.image.ImageWatched.Link;
 import org.w3c.dom.Node;
 
 /**
