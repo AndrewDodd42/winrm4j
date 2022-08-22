@@ -61,7 +61,7 @@
     <includedTestGroups />
     <excludedTestGroups>Integration,Acceptance,Live,WIP</excludedTestGroups>
     <surefire.failIfNoSpecifiedTests>false</surefire.failIfNoSpecifiedTests>
-    <surefire.version>2.19.1</surefire.version>
+    <surefire.version>2.22.2</surefire.version>
     <testng.version>6.9.10</testng.version>
     <guava.version>27.1-jre</guava.version>
     <mockwebserver.version>3.5.0</mockwebserver.version>
