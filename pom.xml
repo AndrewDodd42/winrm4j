@@ -81,6 +81,7 @@
     <module>service</module>
     <module>client</module>
     <module>winrm4j</module>
+    <module>distribution</module>
   </modules>
 
 
