@@ -68,7 +68,7 @@
 
     <!-- Production -->
     <cxf.version>3.5.3</cxf.version>
-    <cxf.java2ws.plugin.version>${cxf.version}</cxf.java2ws.plugin.version>
+    <cxf.java2ws.plugin.version>3.5.4</cxf.java2ws.plugin.version>
     <httpcomponents.httpcore.version>4.4.15</httpcomponents.httpcore.version>
     <httpcomponents.httpasyncclient.version>4.1.5</httpcomponents.httpasyncclient.version>
     <httpcomponents.httpclient.version>4.5.13</httpcomponents.httpclient.version>
