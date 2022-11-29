@@ -1,16 +1,5 @@
 package io.cloudsoft.winrm4j.service;
 
-import java.util.List;
-
-import javax.jws.WebMethod;
-import javax.jws.WebParam;
-import javax.jws.WebResult;
-import javax.jws.WebService;
-import javax.jws.soap.SOAPBinding;
-import javax.xml.ws.Action;
-import javax.xml.ws.BindingType;
-import javax.xml.ws.RequestWrapper;
-
 import io.cloudsoft.winrm4j.service.enumerate.EnumerateRequest;
 import io.cloudsoft.winrm4j.service.enumerate.EnumerateResponse;
 import io.cloudsoft.winrm4j.service.enumerate.PullRequest;
@@ -24,6 +13,16 @@ import io.cloudsoft.winrm4j.service.wsman.Locale;
 import io.cloudsoft.winrm4j.service.wsman.OptionSetType;
 import io.cloudsoft.winrm4j.service.wsman.SelectorSetType;
 import io.cloudsoft.winrm4j.service.wsman.Signal;
+import jakarta.jws.WebMethod;
+import jakarta.jws.WebParam;
+import jakarta.jws.WebResult;
+import jakarta.jws.WebService;
+import jakarta.jws.soap.SOAPBinding;
+import jakarta.xml.ws.Action;
+import jakarta.xml.ws.BindingType;
+import jakarta.xml.ws.RequestWrapper;
+
+import java.util.List;
 
 //https://msdn.microsoft.com/en-us/library/cc251731.aspx
 //https://msdn.microsoft.com/en-us/library/cc251526.aspx

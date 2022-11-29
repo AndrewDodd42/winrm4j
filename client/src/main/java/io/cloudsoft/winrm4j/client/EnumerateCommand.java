@@ -1,16 +1,5 @@
 package io.cloudsoft.winrm4j.client;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.ws.soap.SOAPFaultException;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-
 import io.cloudsoft.winrm4j.client.enumeration.EnumerateResponse;
 import io.cloudsoft.winrm4j.client.enumeration.PullResponse;
 import io.cloudsoft.winrm4j.client.wsman.Enumerate;
@@ -19,12 +8,22 @@ import io.cloudsoft.winrm4j.client.wsman.Items;
 import io.cloudsoft.winrm4j.client.wsman.Locale;
 import io.cloudsoft.winrm4j.client.wsman.OptionSetType;
 import io.cloudsoft.winrm4j.client.wsman.Pull;
+import jakarta.xml.ws.soap.SOAPFaultException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 import static io.cloudsoft.winrm4j.client.WinRmClient.MAX_ENVELOPER_SIZE;
 
