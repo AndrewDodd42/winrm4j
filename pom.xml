@@ -64,7 +64,7 @@
     <surefire.version>2.22.0</surefire.version>
     <testng.version>6.9.10</testng.version>
     <guava.version>18.0</guava.version>
-    <mockwebserver.version>3.5.0</mockwebserver.version>
+    <mockwebserver.version>4.10.0</mockwebserver.version>
 
     <!-- Production -->
     <cxf.version>3.5.4</cxf.version>
