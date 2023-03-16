@@ -169,7 +169,7 @@
       <plugins>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.6.0</version>
+          <version>3.11.0</version>
           <configuration>
             <source>${java.version}</source>
             <target>${java.version}</target>
@@ -210,7 +210,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-failsafe-plugin</artifactId>
-          <version>2.18.1</version>
+          <version>3.0.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
@@ -219,23 +219,23 @@
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>5.1.8</version>
         </plugin>
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
+          <version>3.3.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-source-plugin</artifactId>
-          <version>3.0.1</version>
+          <version>3.2.1</version>
         </plugin>
         <plugin>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.5.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-eclipse-plugin</artifactId>
@@ -247,7 +247,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.10.4</version>
+          <version>3.5.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-gpg-plugin</artifactId>
@@ -423,13 +423,9 @@
                    http://stackoverflow.com/questions/888199/why-does-maven-install-fail-during-javadoc-generation 
                    http://bugs.sun.com/bugdatabase/view_bug.do;jsessionid=ac084ab7f47c4e7f1df2117cecd?bug_id=5101868 -->
               <use>false</use>
-              <links>
-                <link>http://download.oracle.com/javaee/6/api</link>
-              </links>
               <keywords>true</keywords>
               <author>false</author>
               <quiet>true</quiet>
-              <aggregate>false</aggregate>
               <detectLinks />
               <tags>
                 <tag>
@@ -441,7 +437,8 @@
               
               <!-- See https://stackoverflow.com/questions/15886209/maven-is-not-working-in-java-8-when-javadoc-tags-are-incomplete 
               -->
-              <additionalparam>-Xdoclint:none</additionalparam>
+              <additionalJOption>-Xdoclint:all</additionalJOption>
+              <additionalJOption>-Xdoclint:-missing</additionalJOption>
               
             </configuration>
             <executions>
