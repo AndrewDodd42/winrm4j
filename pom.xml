@@ -63,7 +63,7 @@
     <surefire.failIfNoSpecifiedTests>false</surefire.failIfNoSpecifiedTests>
     <surefire.version>3.2.5</surefire.version>
     <testng.version>7.10.2</testng.version>
-    <guava.version>31.1-jre</guava.version>
+    <guava.version>33.1.0-jre</guava.version>
     <mockwebserver.version>4.12.0</mockwebserver.version>
 
     <!-- Production -->
