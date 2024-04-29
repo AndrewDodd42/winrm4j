@@ -323,7 +323,7 @@
                   <pluginExecutionFilter>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <versionRange>[2.8,)</versionRange>
+                    <versionRange>[3.6,)</versionRange>
                     <goals>
                       <goal>unpack</goal>
                       <goal>copy</goal>
