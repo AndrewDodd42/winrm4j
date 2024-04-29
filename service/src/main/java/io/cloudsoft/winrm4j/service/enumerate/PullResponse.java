@@ -1,9 +1,9 @@
 package io.cloudsoft.winrm4j.service.enumerate;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 
 // https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-wsmv/939e283a-5518-4e43-9d9f-4f0b1a199815
 // https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-wsmv/8923a1bb-ea8b-49cb-8495-5f2612e7a0f9

@@ -358,22 +358,6 @@ public class WinRmTool {
         this.failureRetryPolicy = failureRetryPolicy;
     }
 
-    /**
-     * Executes a Native Windows command.
-     * It is creating a new Shell on the destination host each time it is being called.
-     * @param command The command is limited to 8096 bytes.
-     *                Maximum length of the command can be even smaller depending on the platform.
-     *                https://support.microsoft.com/en-us/kb/830473
-     * @since 0.2
-     */
-    public WinRmToolResponse executeCommand(String command) {
-        return executeCommand(command, null, null);
-    }
-
-    public WinRmToolResponse executeCommand(String command, List<String> args) {
-        return executeCommand(command, args, DEFAULT_SKIP_COMMAND_SHELL, null, null);
-    }
-
     public WinRmClient buildClient(Writer out, Writer err) {
         WinRmClient.checkNotNull(out, "Out Writer");
         WinRmClient.checkNotNull(err, "Err Writer");
@@ -429,6 +413,22 @@ public class WinRmTool {
         builder.codePage(codePage);
 
         return builder.build();
+    }
+
+    /**
+     * Executes a Native Windows command.
+     * It is creating a new Shell on the destination host each time it is being called.
+     * @param command The command is limited to 8096 bytes.
+     *                Maximum length of the command can be even smaller depending on the platform.
+     *                https://support.microsoft.com/en-us/kb/830473
+     * @since 0.2
+     */
+    public WinRmToolResponse executeCommand(String command) {
+        return executeCommand(command, null, null);
+    }
+
+    public WinRmToolResponse executeCommand(String command, List<String> args) {
+        return executeCommand(command, args, DEFAULT_SKIP_COMMAND_SHELL, null, null);
     }
 
     public WinRmToolResponse executeCommand(String command, Writer out, Writer err) {
@@ -501,7 +501,8 @@ public class WinRmTool {
 
     private String compileBase64(String psScript) {
         byte[] cmd = psScript.getBytes(Charset.forName("UTF-16LE"));
-        return javax.xml.bind.DatatypeConverter.printBase64Binary(cmd);
+        String arg = jakarta.xml.bind.DatatypeConverter.printBase64Binary(cmd);
+        return "chcp " + codePage + " > NUL & powershell -encodedcommand " + arg;
     }
 
     /**
