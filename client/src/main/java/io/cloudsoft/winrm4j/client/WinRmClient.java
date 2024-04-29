@@ -183,6 +183,7 @@ public class WinRmClient implements AutoCloseable {
         }
 
         /** @deprecated since 0.6.0. Use {@link WinRmClient#builder(String, String)} instead. */
+        @Deprecated
         public Builder(String endpoint, String authenticationScheme) {
             this(WinRmClientBuilder.toUrlUnchecked(checkNotNull(endpoint, "endpoint")),
                     checkNotNull(authenticationScheme, "authenticationScheme"));

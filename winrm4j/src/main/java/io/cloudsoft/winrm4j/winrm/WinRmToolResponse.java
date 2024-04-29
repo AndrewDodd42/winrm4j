@@ -25,6 +25,7 @@ public class WinRmToolResponse {
     }
 
     /** @deprecated since 0.6.0. Implementation detail, access will be removed in future versions */
+    @Deprecated
     public void setNumberOfReceiveCalls(int numberOfReceiveCalls) {
         this.numberOfReceiveCalls = numberOfReceiveCalls;
     }
