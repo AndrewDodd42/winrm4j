@@ -61,25 +61,27 @@
     <includedTestGroups />
     <excludedTestGroups>Integration,Acceptance,Live,WIP</excludedTestGroups>
     <surefire.failIfNoSpecifiedTests>false</surefire.failIfNoSpecifiedTests>
-    <surefire.version>2.22.0</surefire.version>
-    <testng.version>6.9.10</testng.version>
-    <guava.version>18.0</guava.version>
-    <mockwebserver.version>4.10.0</mockwebserver.version>
+    <surefire.version>2.22.2</surefire.version>
+    <testng.version>7.5</testng.version>
+    <guava.version>31.1-jre</guava.version>
+    <mockwebserver.version>4.12.0</mockwebserver.version>
 
     <!-- Production -->
-    <cxf.version>4.0.0</cxf.version>
+    <cxf.version>4.0.4</cxf.version>
     <cxf.java2ws.plugin.version>${cxf.version}</cxf.java2ws.plugin.version>
     <httpcomponents.httpcore.version>4.4.16</httpcomponents.httpcore.version>
     <httpcomponents.httpasyncclient.version>4.1.5</httpcomponents.httpasyncclient.version>
     <httpcomponents.httpclient.version>4.5.14</httpcomponents.httpclient.version>
-    <commons-io.version>2.4</commons-io.version>
-    <xmlunit.version>2.8.1</xmlunit.version>
+    <commons-io.version>2.11.0</commons-io.version>
+    <xmlunit.version>2.9.0</xmlunit.version>
+    <slf4j.version>2.0.6</slf4j.version>
   </properties>
 
   <modules>
     <module>service</module>
     <module>client</module>
     <module>winrm4j</module>
+    <module>distribution</module>
   </modules>
 
 
@@ -193,20 +195,20 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>1.12</version>
+          <version>3.3.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.5.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
+          <version>3.0.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>1.4.1</version>
+          <version>3.4.1</version>
         </plugin>
         <plugin>
           <artifactId>maven-failsafe-plugin</artifactId>
@@ -214,7 +216,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
+          <version>3.3.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.felix</groupId>
@@ -231,11 +233,11 @@
         </plugin>
         <plugin>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.5.0</version>
+          <version>3.7.1</version>
         </plugin>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.2.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-eclipse-plugin</artifactId>
@@ -251,11 +253,11 @@
         </plugin>
         <plugin>
           <artifactId>maven-gpg-plugin</artifactId>
-          <version>1.6</version>
+          <version>3.0.1</version>
         </plugin>
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
-          <version>2.5.3</version>
+          <version>3.0.1</version>
         </plugin>
         <!--This plugin's configuration is used to store Eclipse m2e settings 
           only. It has no influence on the Maven build itself. -->
