@@ -64,7 +64,7 @@
     <surefire.version>3.5.4</surefire.version>
     <testng.version>7.11.0</testng.version>
     <guava.version>33.5.0-jre</guava.version>
-    <mockwebserver.version>4.12.0</mockwebserver.version>
+    <mockwebserver.version>5.3.2</mockwebserver.version>
 
     <!-- Production -->
     <cxf.version>4.1.4</cxf.version>
@@ -73,7 +73,7 @@
     <httpcomponents.httpasyncclient.version>4.1.5</httpcomponents.httpasyncclient.version>
     <httpcomponents.httpclient.version>4.5.14</httpcomponents.httpclient.version>
     <commons-io.version>2.21.0</commons-io.version>
-    <xmlunit.version>2.10.0</xmlunit.version>
+    <xmlunit.version>2.11.0</xmlunit.version>
     <slf4j.version>2.0.17</slf4j.version>
   </properties>
 
@@ -194,7 +194,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>3.6.0</version>
+          <version>3.6.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -232,11 +232,11 @@
         </plugin>
         <plugin>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.7.1</version>
+          <version>3.8.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>3.4.0</version>
+          <version>3.5.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-eclipse-plugin</artifactId>
